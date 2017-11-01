@@ -1,7 +1,6 @@
 # Homework
 
 ## Instructions
-===============
 
 1. Please answer the following question without using any third party resources.
 
@@ -14,23 +13,21 @@
 1. Note: If you are using a compiled language please include instructions on how to build your code.
 
 ## Getting Started
-==================
+
 1. Fork this repo
 
-2. Create a new file for your code
+1. Create a new file for your code
 
-3. Make an initial commit
+1. Make an initial commit
 
-4. Start coding, **committing frequently**
+1. Start coding, **committing frequently**
 
 ## Completing
-=============
 1. Push your code to your forked repo and send a link to the hiring manager.
 
 Note: If it is a privately forked repo invite the hiring manager to the private repo.
 
 ## The Problem
-==============
 
 PricePackager is responsible for taking existing products and repackaging them for sale at electronic stores.
 
@@ -48,8 +45,7 @@ Markups are also added depending on the types of item:
 
 The flat markup is calculated first and then all other markups are calculated on top of the base price plus the flat markup.
 
-Example 1:
-----------
+### Example 1:
 
     Input:  $1,299.99, 3 people, food
     
@@ -62,8 +58,7 @@ Example 1:
 
     Output: $1,591.58
 
-Example 2:
-----------
+### Example 2:
 
     Input:  $5,432.00, 1 person, pharmaceutical
 
@@ -76,8 +71,7 @@ Example 2:
 
     Output: $6,199.81
 
-Example 3:
-----------
+### Example 3:
 
     Input:  $12,456.95, 4 people, books
 
