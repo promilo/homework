@@ -47,20 +47,20 @@ The flat markup is calculated first and then all other markups are calculated on
 
 ### Example 1:
 
-    Input:  $1,299.99, 3 people, food
+    Input:  1299.99, 3 people, food
     
     Base Price:     1299.99
     Flat Markup:    5% = 64.9995
-    Subtotal:       1,364.9895
+    Subtotal:       1364.9895
     Persons Markup: 3 * 1.2% = 3.6% = 49.139622
     Type markup:    13% = 177.448635
-    Total:          1,591.577757
+    Total:          1591.577757
 
-    Output: $1,591.58
+    Output: 1591.58
 
 ### Example 2:
 
-    Input:  $5,432.00, 1 person, pharmaceutical
+    Input:  5432.00, 1 person, pharmaceutical
 
     Base Price:     5432
     Flat Markup:    5% = 271.6
@@ -69,11 +69,11 @@ The flat markup is calculated first and then all other markups are calculated on
     Type markup:    7.5% = 427.77
     Total:          6199.8132
 
-    Output: $6,199.81
+    Output: 6199.81
 
 ### Example 3:
 
-    Input:  $12,456.95, 4 people, books
+    Input:  12456.95, 4 people, books
 
     Base Price:     12456.95
     Flat Markup:    5% = 622.8475
@@ -82,4 +82,4 @@ The flat markup is calculated first and then all other markups are calculated on
     Type markup:    0
     Total:          13707.62778
 
-    Output: $13,707.63
+    Output: 13707.63
