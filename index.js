@@ -5,13 +5,22 @@ const TYPE_MARKUP = {
   "flat": 0.05
 }
 
-module.exports = {
-  pricePackager: (price, people, type) => {
+const pricePackager = {
+  calculate: (price, people, type) => {
+
+
   },
-  parseInput: (people) => {
+  parsePeople: (people) => {
+    return parseInt(people.charAt(0))
   },
   typeMarkup: (type) => {
-
+    if (TYPE_MARKUP[type]){
+      return TYPE_MARKUP[type]
+    }
   }
 
 }
+
+console.log(pricePackager.parsePeople("1 person"))
+
+module.exports = pricePackager;
