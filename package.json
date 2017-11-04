@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "by: Milind Shah",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/promilo/homework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/promilo/homework/issues"
+  },
+  "homepage": "https://github.com/promilo/homework#readme",
+  "dependencies": {
+    "mocha": "^4.0.1"
+  }
+}
