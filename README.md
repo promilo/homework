@@ -1,3 +1,5 @@
+by: Milind Shah
+
 # Homework
 
 ## Instructions
@@ -5,7 +7,7 @@
 1. Please answer the following question without using any third party resources.
 
 1. Treat this problem as a library. No UI or file/console input is expected or required.
- 
+
 1. **Commit often and use many commits. Don't squash into a single commit.**
 
 1. Please submit via publicly accessible repo so that we can review your commits.
@@ -48,7 +50,7 @@ The flat markup is calculated first and then all other markups are calculated on
 ### Example 1:
 
     Input:  1299.99, 3 people, food
-    
+
     Base Price:     1299.99
     Flat Markup:    5% = 64.9995
     Subtotal:       1364.9895
