@@ -4,7 +4,7 @@
   "description": "by: Milind Shah",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
     "url": "https://github.com/promilo/homework/issues"
   },
   "homepage": "https://github.com/promilo/homework#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.1.2",
     "mocha": "^4.0.1"
   }
 }
