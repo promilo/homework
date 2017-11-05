@@ -1,15 +1,10 @@
 "use strict"
 
-const TYPE_MARKUP = {
-  "food" : 0.13,
-  "pharmaceutical": 0.075,
-  "electronic": 0.02,
-}
+const constants = require('./constants')
 
-const BASIC_MARKUP = {
-  "flat": 0.05,
-  "person": 0.012
-}
+const TYPE_MARKUP  = constants.TYPE_MARKUP;
+const BASIC_MARKUP = constants.BASIC_MARKUP;
+
 
 const pricePackager = {
   calculate: (price, numPeople, markupType) => {
