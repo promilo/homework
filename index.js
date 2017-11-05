@@ -11,18 +11,26 @@ const pricePackager = {
     console.log(`Input: ${price}, ${people}, ${type} /n`);
     console.log(`Base Price: ${price}`);
     let total = price;
-    console.log(`Base Price: ${total}`);
+    // calculate the total after Flat Markup
     let flatTotal = total * MARKUP['flat'];
     console.log(`Flat Markup: ${MARKUP["flat"] * 100}% = ${flatTotal}`)
     total += flatTotal
     console.log(`Subtotal: ${total}`)
+    // calculate the total after Persons Markup
     let numPeople = pricePackager.parsePeople(people)
     let peopleMarkup = MARKUP["person"] * numPeople
     let personsTotal = total * peopleMarkup
     console.log(`Persons Markup: ${numPeople} * ${MARKUP["person"] * 100}% = ${(peopleMarkup * 100).toFixed(1)}% = ${personsTotal}`)
-    total += personsTotal
 
-
+    // calculing typeTotal
+    let typeTotal = total * pricePackager.typeMarkup(type);
+    console.log('Type markup:' + (pricePackager.typeMarkup(type) ? `${MARKUP[type] * 100}% = ${typeTotal}`: "0" ))
+    // calculating the total
+    total += typeTotal + personsTotal
+    console.log(`Total: ${total} /n`);
+    total = Math.round(total * 100) /100
+    console.log(`Output: ${total}`)
+    return total
 
 
   },
@@ -32,12 +40,12 @@ const pricePackager = {
   typeMarkup: (type) => {
     if (MARKUP[type]){
       return MARKUP[type]
+    } else {
+      return 0
     }
   },
 
 }
 
-console.log(pricePackager.parsePeople("1 person"))
-console.log(pricePackager.calculate(1299.99, "3 people", "food"))
 
 module.exports = pricePackager;
