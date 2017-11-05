@@ -33,26 +33,24 @@ const pricePackager = {
     // calculating the total
     total += typeTotal + personsTotal
     console.log(`Total: ${total} /n`);
-    total = Math.round(total * 100) /100
-    console.log(`Output: ${total}`)
-    return total
+    total = Math.round(total * 100) / 100
+    console.log(`Output: ${total}`);
+    return total;
 
 
   },
   parsePeople: (people) => {
-    return parseInt(people); 
+    return parseInt(people);
   },
   typeMarkup: (type) => {
     if (TYPE_MARKUP[type]){
-      return TYPE_MARKUP[type]
+      return TYPE_MARKUP[type];
     } else {
-      return 0
+      return 0;
     }
   },
 
 }
-
-console.log(pricePackager.calculate(1232, "2 person", "flat"));
 
 
 module.exports = pricePackager;
