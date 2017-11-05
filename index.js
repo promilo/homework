@@ -12,8 +12,8 @@ const BASIC_MARKUP = {
 }
 
 const pricePackager = {
-  calculate: (price, people, type) => {
-    console.log(`Input: ${price}, ${people}, ${type} /n`);
+  calculate: (price, numPeople, markupType) => {
+    console.log(`Input: ${price}, ${numPeople}, ${markupType} /n`);
     console.log(`Base Price: ${price}`);
     let total = price;
     // calculate the total after Flat Markup
@@ -22,16 +22,16 @@ const pricePackager = {
     total += flatTotal
     console.log(`Subtotal: ${total}`)
     // calculate the total after Persons Markup
-    let numPeople = pricePackager.parsePeople(people)
-    let peopleMarkup = BASIC_MARKUP["person"] * numPeople
+    let parsedNumPeople = pricePackager.parsePeople(numPeople)
+    let peopleMarkup = BASIC_MARKUP["person"] * parsedNumPeople
     let personsTotal = total * peopleMarkup
-    console.log(`Persons Markup: ${numPeople} * ${BASIC_MARKUP["person"] * 100}% = ${(peopleMarkup * 100).toFixed(1)}% = ${personsTotal}`)
+    console.log(`Persons Markup: ${parsedNumPeople} * ${BASIC_MARKUP["person"] * 100}% = ${(peopleMarkup * 100).toFixed(1)}% = ${personsTotal}`)
 
-    // calculing typeTotal
-    let typeTotal = total * pricePackager.typeMarkup(type);
-    console.log('Type markup:' + (pricePackager.typeMarkup(type) ? `${TYPE_MARKUP[type] * 100}% = ${typeTotal}`: "0" ))
+    // calculing markupTypeTotal
+    let markupTypeTotal = total * pricePackager.findMarkup(markupType);
+    console.log('Type markup:' + (pricePackager.findMarkup(markupType) ? `${TYPE_MARKUP[markupType] * 100}% = ${markupTypeTotal}`: "0" ))
     // calculating the total
-    total += typeTotal + personsTotal
+    total += markupTypeTotal + personsTotal
     console.log(`Total: ${total} /n`);
     total = Math.round(total * 100) / 100
     console.log(`Output: ${total}`);
@@ -39,15 +39,11 @@ const pricePackager = {
 
 
   },
-  parsePeople: (people) => {
-    return parseInt(people);
+  parsePeople: (numPeople) => {
+    return parseInt(numPeople);
   },
-  typeMarkup: (type) => {
-    if (TYPE_MARKUP[type]){
-      return TYPE_MARKUP[type];
-    } else {
-      return 0;
-    }
+  findMarkup: (markupType) => {
+      return TYPE_MARKUP[markupType] || 0;
   },
 
 }
