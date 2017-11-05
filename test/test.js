@@ -1,27 +1,36 @@
 "use strict"
 
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const app = require('../index');
 
-const validMarkupTypes = require('../constants').TYPE_MARKUP;
+const validMarkupTypes = require('../constants').VALID_MARKUP_TYPES;
+const Errors = require('../constants').Errors;
 
 describe('Calculate final price based on different numbers of humans working', () => {
 
-  const validMarkupType = "pharmaceutical";
+  const price = 5432.00;
 
   it('Should calculate the correct final price for 1 human', () => {
-    let result = app.calculate(5432.00, "1 person", validMarkupType)
-    assert.equal(result, '6199.81')
+    const numPeople = "1 person";
+    const result = app.calculate(price, numPeople, validMarkupTypes[1])
+    const expected = price * 1.05 * parseInt(numPeople) * 1.02; 
+    assert.equal(result, expected)
   });
 
-  it('Should calculate the correct final price for more than one digit number of humans working', () => {
-    let result = app.calculate(5432.00, "1234 person", validMarkupType)
-    assert.equal(result, '6199.81')
+  it('Should calculate the correct final price for more than one humans working', () => {
+    const numPeople = "2 people";
+    const result = app.calculate(price, numPeople, validMarkupTypes[1])
+    const expected = 6268.24
+    assert.equal(result, expected)
   });
 
   it('Should fail gracefully for invalid number of humans working', () => {
-    let result = app.calculate(5432.00, "-1 person", validMarkupType)
-    assert.equal(result, '6199.81')
+    assert.throws(
+      () => app.calculate(price, "-1 person", validMarkupTypes[1]),
+      Error,
+      Errors.INVALID_NUM_HUMANS
+    );
   });
 })
 

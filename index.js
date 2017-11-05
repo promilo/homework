@@ -4,6 +4,7 @@ const constants = require('./constants')
 
 const TYPE_MARKUP  = constants.TYPE_MARKUP;
 const BASIC_MARKUP = constants.BASIC_MARKUP;
+const Errors = constants.Errors;
 
 
 const pricePackager = {
@@ -22,9 +23,16 @@ const pricePackager = {
     let personsTotal = total * peopleMarkup
     console.log(`Persons Markup: ${parsedNumPeople} * ${BASIC_MARKUP["person"] * 100}% = ${(peopleMarkup * 100).toFixed(1)}% = ${personsTotal}`)
 
-    // calculing markupTypeTotal
-    let markupTypeTotal = total * pricePackager.findMarkup(markupType);
-    console.log('Type markup:' + (pricePackager.findMarkup(markupType) ? `${TYPE_MARKUP[markupType] * 100}% = ${markupTypeTotal}`: "0" ))
+    // calculating markupTypeTotal
+    const markupTypePercentage =  pricePackager.findMarkup(markupType)
+    let markupTypeTotal = total * markupTypePercentage;
+    console.log(
+      'Type markup:' + (
+        markupTypePercentage !== 0
+        ? `${TYPE_MARKUP[markupType] * 100}% = ${markupTypeTotal}`
+        : "0" 
+      )
+    )
     // calculating the total
     total += markupTypeTotal + personsTotal
     console.log(`Total: ${total} /n`);
@@ -35,7 +43,11 @@ const pricePackager = {
 
   },
   parsePeople: (numPeople) => {
-    return parseInt(numPeople);
+    const parsedNumPeople = parseInt(numPeople)
+    if (isNaN(parsedNumPeople) || parsedNumPeople < 0){
+      throw new Error(Errors.INVALID_NUM_HUMANS);
+    }
+    return parsedNumPeople;
   },
   findMarkup: (markupType) => {
       return TYPE_MARKUP[markupType] || 0;
