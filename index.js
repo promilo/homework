@@ -40,7 +40,7 @@ const pricePackager = {
 
   },
   parsePeople: (people) => {
-    return parseInt(people.charAt(0))
+    return parseInt(people); 
   },
   typeMarkup: (type) => {
     if (TYPE_MARKUP[type]){
