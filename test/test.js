@@ -14,14 +14,14 @@ describe('Calculate final price based on different numbers of humans working', (
   it('Should calculate the correct final price for 1 human', () => {
     const numPeople = "1 person";
     const result = app.calculate(price, numPeople, validMarkupTypes[1])
-    const expected = price * 1.05 * parseInt(numPeople) * 1.02; 
+    const expected = 6199.81
     assert.equal(result, expected)
   });
 
   it('Should calculate the correct final price for more than one humans working', () => {
     const numPeople = "2 people";
     const result = app.calculate(price, numPeople, validMarkupTypes[1])
-    const expected = 6268.24
+    const expected = 6268.26
     assert.equal(result, expected)
   });
 
