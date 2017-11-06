@@ -13,16 +13,16 @@ describe('Calculate final price based on different numbers of humans working', (
 
   it('Should calculate the correct final price for 1 human', () => {
     const numPeople = "1 person";
-    const result = app.calculate(price, numPeople, "pharmaceutical")
-    const expected = 6199.81
-    assert.equal(result, expected)
+    const result = app.calculate(price, numPeople, "pharmaceutical");
+    const expected = 6199.81;
+    assert.equal(result, expected);
   });
 
   it('Should calculate the correct final price for more than one humans working', () => {
     const numPeople = "2 people";
-    const result = app.calculate(price, numPeople, "pharmaceutical")
-    const expected = 6268.26
-    assert.equal(result, expected)
+    const result = app.calculate(price, numPeople, "pharmaceutical");
+    const expected = 6268.26;
+    assert.equal(result, expected);
   });
 
   it('Should fail gracefully for invalid number of humans working', () => {
@@ -36,19 +36,19 @@ describe('Calculate final price based on different numbers of humans working', (
 
 describe('Calculate final price based on different types ', () => {
   it('Test with a valid markup type', () => {
-    const result = app.calculate(1299.99, "3 people", "food")
-    const expected = '1591.58'
-    assert.equal(result, expected)
+    const result = app.calculate(1299.99, "3 people", "food");
+    const expected = '1591.58';
+    assert.equal(result, expected);
   }),
   it('Test with a Capitalized Markup', () => {
-    const result = app.calculate(1299.99, "3 people", "Food")
-    const expected = '1591.58'
-    assert.equal(result, expected)
+    const result = app.calculate(1299.99, "3 people", "Food");
+    const expected = '1591.58';
+    assert.equal(result, expected);
   }),
   it('Test with an invalid Markup', () => {
-    let result = app.calculate(12456.95, "4 people", "books")
-    const expected = 13707.63
-    assert.equal(result, expected)
+    let result = app.calculate(12456.95, "4 people", "books");
+    const expected = 13707.63;
+    assert.equal(result, expected);
   })
 })
 
@@ -59,5 +59,5 @@ describe('Check the Base Price', () => {
       Error,
       Errors.INVALID_BASE_PRICE
     );
-  })
-})
+  });
+});
