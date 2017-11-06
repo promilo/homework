@@ -52,11 +52,12 @@ describe('Calculate final price based on different types ', () => {
   })
 })
 
-
-
-describe('test', () => {
-  it('Example 3: should return 13707.63', () => {
-    let result = app.calculate(12456.95, "4 people", "books")
-    assert.equal(result, '13707.63')
+describe('Check the Base Price', () => {
+  it('Should fail gracefully for invalid number of Base Price', () => {
+    assert.throws(
+      () => app.calculate(-124123, "20 person", "pharmaceutical"),
+      Error,
+      Errors.INVALID_BASE_PRICE
+    );
   })
 })

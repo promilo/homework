@@ -13,7 +13,8 @@ const BASIC_MARKUP = {
 }
 
 const Errors = {
-  INVALID_NUM_HUMANS : "Invalid number of humans working"
+  INVALID_NUM_HUMANS : "Invalid number of humans working",
+  INVALID_BASE_PRICE : "Invalid number of base price"
 }
 
 module.exports = {

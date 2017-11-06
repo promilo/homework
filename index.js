@@ -1,14 +1,16 @@
 "use strict"
 
-const constants = require('./constants')
+const constants = require('./constants');
 
 const TYPE_MARKUP  = constants.TYPE_MARKUP;
 const BASIC_MARKUP = constants.BASIC_MARKUP;
 const Errors = constants.Errors;
 
-
 const pricePackager = {
   calculate: (price, numPeople, markupType) => {
+    if (price < 0){
+      throw new Error(Errors.INVALID_BASE_PRICE)
+    }
     console.log(`Input: ${price}, ${numPeople}, ${markupType} /n`);
     console.log(`Base Price: ${price}`);
     let total = price;
