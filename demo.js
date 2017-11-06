@@ -2,6 +2,6 @@
 
 const pricePackager = require('./index')
 
-console.log(pricePackager.calculate(1232, "-2 person", "flat"));
-
- console.log(app.calculate(5432.00, "2 person", "pharmaceutical"))
+pricePackager.calculate(1299.99, "3 people", "food")
+pricePackager.calculate(5432.00, "2 person", "pharmaceutical")
+pricePackager.calculate(12456.95, "4 people", "books")
