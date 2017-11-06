@@ -43,7 +43,7 @@ const pricePackager = {
     return personsTotal;
   },
   calculateTypeMarkup: (type, subtotal) => {
-    const markupTypePercentage =  pricePackager.findMarkup(type);
+    const markupTypePercentage =  pricePackager.findMarkup(type.toLowerCase());
     let markupTypeTotal = subtotal * markupTypePercentage;
     console.log(
       'Type markup:' + (
