@@ -6,7 +6,7 @@ by: Milind Shah
 
 1. Wrote test cases with MochaJS and ChaiJS.
 2. Had a file constants.js that contains all the constants of Markups and Errors.
-  This will help for the scenario of scalability and extendability
+  This will help for the scenario of scalability when you need to add more business logic and keep any future necessary changes constrained to one file.
 3. index.js contains the main functionality of the pricePackager.
 4. demo.js demonstrates that index.js can be used as a library.
 
