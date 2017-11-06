@@ -10,7 +10,7 @@ by: Milind Shah
 3. index.js contains the main functionality of the pricePackager.
 4. demo.js demonstrates that index.js can be used as a library.
 
-### Installation:
+### Installation and a quick demo:
     git clone git@github.com:promilo/homework.git
     node demo.js
     // Check the console for the output
@@ -19,9 +19,7 @@ by: Milind Shah
     npm install
     npm test
 
-# Instructions below is what I given for the coding challenge
-
-
+## Below is the instructions that I was given to complete this challenge
 
 ## Instructions
 
