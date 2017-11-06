@@ -36,6 +36,7 @@ const pricePackager = {
   calculateTotalafterFlat: (number) =>{
     // Find the flat total by checking the basic markup.
     let flatTotal = number * BASIC_MARKUP['flat'];
+    flatTotal = Math.round(flatTotal * 1000000) / 1000000
     console.log(`Flat Markup: ${BASIC_MARKUP["flat"] * 100}% = ${flatTotal}`);
     return flatTotal
   },
@@ -45,6 +46,7 @@ const pricePackager = {
     // find the total people markup % by multiplying the number of people and person markup
     let peopleMarkup = BASIC_MARKUP["person"] * parsedNumPeople;
     let personsTotal = subtotal * peopleMarkup;
+    personsTotal = Math.round(personsTotal * 1000000) / 1000000
 
     console.log(`Persons Markup: ${parsedNumPeople} * ${BASIC_MARKUP["person"] * 100}% = ${(peopleMarkup * 100).toFixed(1)}% = ${personsTotal}`)
     return personsTotal;
@@ -53,6 +55,7 @@ const pricePackager = {
     // find the markup type and handle the case if the inputted item is capitalized. If it can't find it return 0
     const markupTypePercentage =  TYPE_MARKUP[type.toLowerCase()] || 0;
     let markupTypeTotal = subtotal * markupTypePercentage;
+    markupTypeTotal = Math.round(markupTypeTotal * 1000000) / 1000000
     console.log(
       'Type markup:' + (
         markupTypePercentage !== 0
