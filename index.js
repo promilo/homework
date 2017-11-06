@@ -20,13 +20,13 @@ const pricePackager = {
     total += pricePackager.calculateTotalafterFlat(total);
     console.log(`Subtotal: ${total}`);
 
-    // calculate the total after Persons Markup
+    // calculate the persons markedupvalue
     let personsTotal = pricePackager.calculatePersonsMarkup(numPeople, total);
 
-    // calculating markupTypeTotal
+    // calculating item  markedupvalue
     let markupTypeTotal = pricePackager.calculateTypeMarkup(markupType, total);
 
-    // calculating the total
+    // calculating the total by adding the subtotal with the markedup value from number of people and the item
     total += markupTypeTotal + personsTotal;
     console.log(`Total: ${total} \n`);
     total = Math.round(total * 100) / 100;
@@ -50,8 +50,9 @@ const pricePackager = {
     return personsTotal;
   },
   calculateTypeMarkup: (type, subtotal) => {
-    // find the markup type and handle the case if the inputted item is capitalized. If it can't find it return 0
+    // find the markup type and handle the case if the inputted item is capitalized. If it can't find it, then return 0
     const markupTypePercentage =  TYPE_MARKUP[type.toLowerCase()] || 0;
+    // calculate markedupvalue of the item by multiplying subtotal and the percentage
     let markupTypeTotal = subtotal * markupTypePercentage;
     console.log(
       'Type markup:' + (
