@@ -1,6 +1,27 @@
+# Homework
+
 by: Milind Shah
 
-# Homework
+## How did I solve this challenge?
+
+1. Wrote test cases with MochaJS and ChaiJS.
+2. Had a file constants.js that contains all the constants of Markups and Errors.
+  This will help for the scenario of scalability and extendability
+3. index.js contains the main functionality of the pricePackager.
+4. demo.js demonstrates that index.js can be used as a library.
+
+### Installation:
+    git clone git@github.com:promilo/homework.git
+    node demo.js
+    // Check the console for the output
+
+### Testing:
+    npm install
+    npm test
+
+# Instructions below is what I given for the coding challenge
+
+
 
 ## Instructions
 
